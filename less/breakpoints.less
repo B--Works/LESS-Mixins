@@ -1,0 +1,9 @@
+// Breakpoints
+// http://stackoverflow.com/questions/21337327/can-you-create-custom-breakpoints-with-less-mixins
+// Usage: .bp(768px, { display: block; });
+
+.bp(@point, @rules) {
+	@media screen and (min-width: @point) {
+		@rules();
+	}
+}

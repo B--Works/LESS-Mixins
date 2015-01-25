@@ -1,0 +1,11 @@
+// px to em converter
+// http://stackoverflow.com/questions/19510224/convert-px-to-em-in-less
+// Usage: .em(max-width, 960px);
+
+@emInPx: 16;
+.em(@selector, @amt) when (isem(@amt)) {
+	@{selector}: @amt;
+}
+.em(@selector, @amt, @emInPx: @emInPx) when (ispixel(@amt)) {
+	@{selector}: unit((@amt / @emInPx), em);
+}
